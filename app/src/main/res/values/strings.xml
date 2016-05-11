@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Easy_Remis</string>
+    <string name="app_name">Easy Remis</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -19,7 +19,34 @@
 
 
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
-    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Easy Remis \'.</string>
     <string name="permission_required_toast">Location permission is required for this demo.</string>
     <string name="HeaderName">Header</string>
+    <string name="autocomplete_hint">Enter place name or address</string>
+    <string name="empezar_viaje">Empezar Viaje</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="mensaje_para_el_conductor">Mensaje para el conductor??</string>
+    <string name="place_details">
+        <![CDATA[
+        <b>%1$s</b>
+        <br/>
+        <i>Place Id: %2$s</i>
+        <br/>
+        Address: %3$s
+        <br/>
+        Phone: %4$s
+        <br/>
+        Website: %5$s
+    ]]>
+    </string>
+    <string name="selected_place">Escribir direccion</string>
+    <string name="imagendestino">ImagenDestino</string>
+    <string name="direccion_posicion_destino">Direccion Posicion Destino</string>
+    <string name="localidad_posicion_destino">Localidad Posicion Destino</string>
+    <string name="imagendestinopagetwo">ImagenDestinoPageTwo</string>
+    <string name="direccion_posicion_origen">Direccion Posicion Origen</string>
+    <string name="localidad_posicion_origen">Localidad Posicion Origen</string>
+    <string name="action_calendar">Reserva</string>
+
+
 </resources>

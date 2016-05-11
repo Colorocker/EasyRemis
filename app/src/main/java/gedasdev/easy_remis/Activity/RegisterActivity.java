@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Registracion");
         setContentView(R.layout.content_fragment_register);
     }
 

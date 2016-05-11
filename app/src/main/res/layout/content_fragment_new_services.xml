@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/person_name_origen"
+            android:id="@+id/adress_title_origen"
             android:layout_toRightOf="@+id/marker_photo_origen"
             android:layout_alignParentTop="true"
             android:textSize="30sp"
@@ -41,9 +41,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/person_age_origen"
+            android:id="@+id/adress_origen"
             android:layout_toRightOf="@+id/marker_photo_origen"
-            android:layout_below="@+id/person_name_origen"
+            android:layout_below="@+id/adress_title_origen"
             android:text="Sitio de Montevideo 1158"
             android:textColor="@color/colorAccent"
             />
@@ -87,7 +87,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/person_name_destino"
+                android:id="@+id/adress_title_destino"
                 android:layout_toRightOf="@+id/person_photo_destino"
                 android:layout_alignParentTop="true"
                 android:textSize="30sp"
@@ -98,9 +98,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/person_"
+                android:id="@+id/adress_destino"
                 android:layout_toRightOf="@+id/person_photo_destino"
-                android:layout_below="@+id/person_name_destino"
+                android:layout_below="@+id/adress_title_destino"
                 android:text="Patagones 2550"
                 android:textColor="@color/colorAccent"
                 />

@@ -1,4 +1,4 @@
-package gedasdev.easy_remis.Class;
+package gedasdev.easy_remis.Interface;
 
 import android.view.View;
 

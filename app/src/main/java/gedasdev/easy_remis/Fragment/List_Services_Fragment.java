@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gedasdev.easy_remis.Class.CustomItemClickListener;
+import gedasdev.easy_remis.Interface.CustomItemClickListener;
 import gedasdev.easy_remis.Class.Solicitud;
 import gedasdev.easy_remis.Class.SolicitudAdapter;
 import gedasdev.easy_remis.R;
