@@ -35,7 +35,9 @@ import gedasdev.easy_remis.R;
  * Created by Colorado on 17/04/2016.
  */
 public class MapActivity  extends AppCompatActivity  implements GoogleApiClient.OnConnectionFailedListener,
-        GoogleApiClient.ConnectionCallbacks, OnMapReadyCallback,IFragmentToActivity {
+        GoogleApiClient.ConnectionCallbacks, OnMapReadyCallback
+//        ,IFragmentToActivity
+{
 
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
@@ -182,24 +184,6 @@ public class MapActivity  extends AppCompatActivity  implements GoogleApiClient.
         }
     }
 
-    @Override
-    public void showToast(String msg) {
 
-    }
-
-    @Override
-    public void NextFragment() {
-
-    }
-
-    @Override
-    public void BackFragment() {
-
-    }
-
-    @Override
-    public void communicateToFragment2() {
-
-    }
 }
 

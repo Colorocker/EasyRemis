@@ -43,8 +43,8 @@ public class ThirdFragment extends Fragment {
 //        TextView textView = (TextView) v.findViewById(R.id.tvFragThird);
 //        textView.setText(getArguments().getString("msg"));
 
-        textDireccion = (TextView) v.findViewById(R.id.txt_direccion_search);
-        textDistricto = (TextView) v.findViewById(R.id.txt_distrito_search);
+//        textDireccion = (TextView) v.findViewById(R.id.txt_direccion_search);
+//        textDistricto = (TextView) v.findViewById(R.id.txt_distrito_search);
 
 
         return v;
@@ -76,8 +76,7 @@ public class ThirdFragment extends Fragment {
     }
 
     public void SetUbicacionOrigen(String direccion, String districto) {
-        Toast.makeText(getActivity(), "Fragment 3: GET DIRECCION.",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Fragment 3: GET DIRECCION.",Toast.LENGTH_SHORT).show();
         if(textDireccion != null) {
             textDireccion.setText(direccion);
             textDistricto.setText(districto);

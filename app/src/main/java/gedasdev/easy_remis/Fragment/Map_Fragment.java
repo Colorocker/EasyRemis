@@ -2,6 +2,8 @@ package gedasdev.easy_remis.Fragment;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -48,8 +50,11 @@ import gedasdev.easy_remis.R;
 /**
  * Created by Colorado on 30/04/2016.
  */
-public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener
-        , OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleApiClient.ConnectionCallbacks
+public class Map_Fragment extends Fragment implements
+//        IFragmentToActivity,
+        ViewPager.OnPageChangeListener
+//        , RadioGroup.OnCheckedChangeListener
+        , OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleApiClient.ConnectionCallbacks,GoogleMap.OnCameraChangeListener
         , GoogleApiClient.OnConnectionFailedListener, LocationListener, ActivityCompat.OnRequestPermissionsResultCallback
 
 {
@@ -99,8 +104,8 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
 
         pager.addOnPageChangeListener(this);
 
-        radioGroup = (RadioGroup) view.findViewById(R.id.radiogroup);
-        radioGroup.setOnCheckedChangeListener(this);
+//        radioGroup = (RadioGroup) view.findViewById(R.id.radiogroup);
+//        radioGroup.setOnCheckedChangeListener(this);
 
 
         mFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -133,20 +138,14 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
     }
 
 
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch (checkedId) {
-            case R.id.radioButton1:
-                pager.setCurrentItem(0);
-                break;
-            case R.id.radioButton2:
-                pager.setCurrentItem(1);
-                break;
-            case R.id.radioButton3:
-                pager.setCurrentItem(2);
-                break;
-        }
+
+    public void ChangeTab(int pos)
+    {
+        //Toast.makeText(this.getContext(), "Fragment "+ pos ,Toast.LENGTH_SHORT).show();
+        pager.setCurrentItem(pos);
     }
+
+
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -156,16 +155,16 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
     public void onPageSelected(int position) {
         switch (position) {
             case 0:
-                radioGroup.check(R.id.radioButton1);
+//                radioGroup.check(R.id.radioButton1);
                 break;
             case 1:
-                radioGroup.check(R.id.radioButton2);
+//                radioGroup.check(R.id.radioButton2);
                 break;
             case 2:
-                radioGroup.check(R.id.radioButton3);
+//                radioGroup.check(R.id.radioButton3);
                 break;
             default:
-                radioGroup.check(R.id.radioButton1);
+//                radioGroup.check(R.id.radioButton1);
         }
     }
 
@@ -192,7 +191,7 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
     }
 
     protected synchronized void buildGoogleApiClient() {
-        Toast.makeText(this.getContext(), "buildGoogleApiClient", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this.getContext(), "buildGoogleApiClient", Toast.LENGTH_SHORT).show();
         mGoogleApiClient = new GoogleApiClient.Builder(this.getContext())
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -223,6 +222,8 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
             markerOptions.title("Posicion Origen");
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
             currLocationMarker = mGoogleMap.addMarker(markerOptions);
+
+            AddSomeMarkerAroundLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude());
         }
 
         mLocationRequest = new LocationRequest();
@@ -241,9 +242,39 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
 
     }
 
+    public void AddSomeMarkerAroundLocation(double lat,double longitud)
+    {
+        Drawable d = getResources().getDrawable(R.drawable.ic_car);
+
+        latLng = new LatLng(lat + 0.0000947, longitud + 0.0025603);
+
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title("AUTO");
+        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(((BitmapDrawable)d).getBitmap()));
+
+        latLng = new LatLng(lat - 0.0035802, longitud - 0.005388);
+
+        MarkerOptions markerOptions2 = new MarkerOptions();
+        markerOptions2.position(latLng);
+        markerOptions2.title("AUTO");
+        markerOptions2.icon(BitmapDescriptorFactory.fromBitmap(((BitmapDrawable)d).getBitmap()));
+
+        latLng = new LatLng(lat + 0.0035802, longitud - 0.0025603);
+
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(latLng);
+        markerOptions3.title("AUTO");
+        markerOptions3.icon(BitmapDescriptorFactory.fromBitmap(((BitmapDrawable)d).getBitmap()));
+
+        mGoogleMap.addMarker(markerOptions);
+        mGoogleMap.addMarker(markerOptions2);
+        mGoogleMap.addMarker(markerOptions3);
+    }
+
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(this.getContext(), "onConnectionSuspended", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this.getContext(), "onConnectionSuspended", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -271,10 +302,10 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Posicion Origen");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-        currLocationMarker = mGoogleMap.addMarker(markerOptions);
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
 
-        Toast.makeText(this.getContext(), "Location Changed", Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this.getContext(), "Location Changed", Toast.LENGTH_SHORT).show();
 
         GetDirecctionLocation_Search(location.getLatitude(), location.getLongitude());
         //zoom to current position:
@@ -284,8 +315,10 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
         mGoogleMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
 
+        currLocationMarker = mGoogleMap.addMarker(markerOptions);
         //If you only need one location, unregister the listener
         LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+        mGoogleMap.setOnCameraChangeListener(this);
     }
 
     public void GetDirecctionLocation_Search(double latitude, double longitude) {
@@ -294,7 +327,7 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
             List<Address> list = geocoder.getFromLocation(latitude, longitude, 1);
             if (!list.isEmpty()) {
                 Address address = list.get(0);
-                //Toast.makeText(this.getContext(), address.getAddressLine(0), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this.getContext(), address.getAddressLine(0), Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this.getContext(), textViewDireccion.getText(), Toast.LENGTH_SHORT).show();
 
                 if (textViewDireccion != null) {
@@ -309,28 +342,16 @@ public class Map_Fragment extends Fragment implements IFragmentToActivity, ViewP
     }
 
     @Override
-    public void showToast(String msg) {
+    public void onCameraChange(CameraPosition cameraPosition) {
+        if(currLocationMarker != null) {
+            currLocationMarker.remove();
+            latLng = new LatLng(cameraPosition.target.latitude, cameraPosition.target.longitude);
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(latLng);
+            markerOptions.title("Posicion Origen");
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
 
-    }
-
-    @Override
-    public void NextFragment() {
-
-    }
-
-    @Override
-    public void BackFragment() {
-
-    }
-
-    @Override
-    public void communicateToFragment2() {
-        SecondFragment fragment = (SecondFragment) myadapter.getItem(1);
-        if (fragment != null) {
-            fragment.SetUbicacionOrigen("","");
-        } else {
-            Log.i(LOG_TAG, "Fragment 2 is not initialized");
+            currLocationMarker = mGoogleMap.addMarker(markerOptions);
         }
-
     }
 }

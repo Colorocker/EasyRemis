@@ -70,11 +70,8 @@ public class FirstFragment extends Fragment {
         origen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "ORIGEN", Toast.LENGTH_LONG).show();
-
                 textDireccion = (TextView) v.findViewById(R.id.txt_direccion_search);
-
-                mCallback.NextFragment();
+                mCallback.NextFragment(0);
 
             }
         });

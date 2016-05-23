@@ -7,10 +7,8 @@ public interface IFragmentToActivity {
 
     void showToast(String msg);
 
-    void NextFragment();
+    void NextFragment(int currentFragment);
 
-    void BackFragment();
-
-    void communicateToFragment2();
+    void BackFragment(int currentFragment);
 
 }

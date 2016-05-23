@@ -6,255 +6,499 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card_search"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
-        android:visibility="visible">
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_origen"
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
 
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/tvFragThird"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="TextView"
-                android:textSize="26dp"
-                android:visibility="gone" />
+                android:id="@+id/marker_photo_origen"
+                android:src="@drawable/ic_home_map_marker"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/marcador_origen" />
 
             <TextView
-                android:id="@+id/lbldireccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Lugar Origen"
-                android:textSize="26dp"
-                 />
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/ic_map_marker_radius"
-                    android:tint="@color/android_green" />
-
-
-                <TextView
-                    android:id="@+id/txt_direccion_search_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="31dp"
-                    android:layout_marginStart="31dp"
-                    android:text="Direccion Posicion Origen"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <TextView
-                    android:id="@+id/txt_distrito_search_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/txt_direccion_search_pagethree"
-                    android:layout_alignStart="@+id/txt_direccion_search_pagethree"
-                    android:layout_below="@+id/txt_direccion_search_pagethree"
-                    android:text="Localidad Posicion Origen"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/lbldirecciondestino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Lugar Destino"
-                android:textSize="26dp"
+                android:id="@+id/adress_title_origen"
+                android:layout_toRightOf="@+id/marker_photo_origen"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                android:text="@string/origen"
+                android:textColor="@color/colorPrimaryDark"
                 />
 
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/img_destino_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="16dp"
-                    android:tint="@color/android_red"
-                    android:src="@drawable/ic_flag_variant" />
-
-
-                <TextView
-                    android:id="@+id/txt_direccion_destino_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="31dp"
-                    android:layout_marginStart="31dp"
-                    android:text="Direccion Posicion Destino"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <TextView
-                    android:id="@+id/txt_distrito_destino_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/txt_direccion_destino_pagethree"
-                    android:layout_alignStart="@+id/txt_direccion_destino_pagethree"
-                    android:layout_below="@+id/txt_direccion_destino_pagethree"
-                    android:text="Localidad Posicion Destino"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            </RelativeLayout>
-
             <TextView
-                android:id="@+id/lblreserva"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Fecha y Hora para reserva"
-                android:textSize="26dp"
+                android:id="@+id/adress_origen"
+                android:layout_toRightOf="@+id/marker_photo_origen"
+                android:layout_below="@+id/adress_title_origen"
+                android:text="Sitio de Montevideo 1158"
+                android:textColor="@color/colorAccent"
                 />
 
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/img_calendario_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="16dp"
-                    android:tint="@color/cardview_dark_background"
-                    android:src="@drawable/ic_watch" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="false"></android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-
-                    ></android.support.design.widget.TextInputLayout>
-
-                <EditText android:id="@+id/input_fecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="Fecha"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/img_calendario_pagethree" />
-
-                <EditText android:id="@+id/input_hora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-
-                    android:hint="Hora"
-                    android:layout_below="@+id/img_calendario_pagethree"
-                    android:layout_alignStart="@+id/input_fecha" />
-
-
-            </RelativeLayout>
-            <TextView
-                android:id="@+id/lblPromocion"
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Promocion"
-                android:textSize="26dp"
-                />
+                android:id="@+id/eliminar_origen"
+                android:src="@drawable/ic_close"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:background="@null"
+                android:contentDescription="@string/eliminar" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/img_promocion_pagethree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginRight="16dp"
-                    android:tint="@color/android_darkorange"
-                    android:src="@drawable/ic_ticket" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="false"></android.support.design.widget.TextInputLayout>
-
-
-
-                <EditText android:id="@+id/input_promocion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="Numero"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/img_promocion_pagethree" />
-
-
-
-
-            </RelativeLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Confirmar"
-                android:id="@+id/button" />
-        </LinearLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_destino"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_photo_destino"
+                android:src="@drawable/ic_google_maps"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/destino" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adress_title_destino"
+                android:layout_toRightOf="@+id/person_photo_destino"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                android:text="Destino"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/adress_destino"
+                android:layout_toRightOf="@+id/person_photo_destino"
+                android:layout_below="@+id/adress_title_destino"
+                android:text="Patagones 2550"
+                android:textColor="@color/colorAccent"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eliminar_destino"
+                android:src="@drawable/ic_close"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:background="@null"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_reserva"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reserva_photo"
+                android:src="@drawable/ic_calendar"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reserva_title"
+                android:layout_toRightOf="@+id/reserva_photo"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                android:text="Reserva"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reserva_edit"
+                android:layout_toRightOf="@+id/reserva_photo"
+                android:layout_below="@+id/reserva_title"
+                android:text="25/05/2017, 15:25 p.m."
+                android:textColor="@color/colorAccent"
+                />
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_datosextra"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_photo_datosextra"
+                android:src="@drawable/ic_flag_variant"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_name_datosextra"
+                android:layout_toRightOf="@+id/person_photo_datosextra"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                android:text="Otros Datos"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/text_referencia"
+                android:layout_below="@+id/person_photo_datosextra">
+
+                <EditText android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Referencia" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--  Password Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/text_referencia"
+                android:id="@+id/text_nropromocion">
+                <EditText android:id="@+id/input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Numero Promocion"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:src="@android:drawable/ic_menu_add"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/card_search"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_gravity="center_horizontal|top"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:visibility="visible">-->
+
+        <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+
+            <!--android:orientation="vertical">-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvFragThird"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="TextView"-->
+                <!--android:textSize="26dp"-->
+                <!--android:visibility="gone" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/lbldireccion"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Lugar Origen"-->
+                <!--android:textSize="26dp"-->
+                 <!--/>-->
+
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:src="@drawable/ic_map_marker_radius"-->
+                    <!--android:tint="@color/android_green" />-->
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/txt_direccion_search_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_marginLeft="31dp"-->
+                    <!--android:layout_marginStart="31dp"-->
+                    <!--android:text="Direccion Posicion Origen"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/txt_distrito_search_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignLeft="@+id/txt_direccion_search_pagethree"-->
+                    <!--android:layout_alignStart="@+id/txt_direccion_search_pagethree"-->
+                    <!--android:layout_below="@+id/txt_direccion_search_pagethree"-->
+                    <!--android:text="Localidad Posicion Origen"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceSmall" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/lbldirecciondestino"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Lugar Destino"-->
+                <!--android:textSize="26dp"-->
+                <!--/>-->
+
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_destino_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:tint="@color/android_red"-->
+                    <!--android:src="@drawable/ic_flag_variant" />-->
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/txt_direccion_destino_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_marginLeft="31dp"-->
+                    <!--android:layout_marginStart="31dp"-->
+                    <!--android:text="Direccion Posicion Destino"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/txt_distrito_destino_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignLeft="@+id/txt_direccion_destino_pagethree"-->
+                    <!--android:layout_alignStart="@+id/txt_direccion_destino_pagethree"-->
+                    <!--android:layout_below="@+id/txt_direccion_destino_pagethree"-->
+                    <!--android:text="Localidad Posicion Destino"-->
+                    <!--android:textAppearance="?android:attr/textAppearanceSmall" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/lblreserva"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Fecha y Hora para reserva"-->
+                <!--android:textSize="26dp"-->
+                <!--/>-->
+
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_calendario_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:tint="@color/cardview_dark_background"-->
+                    <!--android:src="@drawable/ic_watch" />-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginBottom="8dp"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="false"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentEnd="false"></android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginBottom="8dp"-->
+
+                    <!--&gt;</android.support.design.widget.TextInputLayout>-->
+
+                <!--<EditText android:id="@+id/input_fecha"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:hint="Fecha"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_toEndOf="@+id/img_calendario_pagethree" />-->
+
+                <!--<EditText android:id="@+id/input_hora"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textEmailAddress"-->
+
+                    <!--android:hint="Hora"-->
+                    <!--android:layout_below="@+id/img_calendario_pagethree"-->
+                    <!--android:layout_alignStart="@+id/input_fecha" />-->
+
+
+            <!--</RelativeLayout>-->
+            <!--<TextView-->
+                <!--android:id="@+id/lblPromocion"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Promocion"-->
+                <!--android:textSize="26dp"-->
+                <!--/>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_promocion_pagethree"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:tint="@color/android_darkorange"-->
+                    <!--android:src="@drawable/ic_ticket" />-->
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginBottom="8dp"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="false"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentEnd="false"></android.support.design.widget.TextInputLayout>-->
+
+
+
+                <!--<EditText android:id="@+id/input_promocion"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:hint="Numero"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_toEndOf="@+id/img_promocion_pagethree" />-->
+
+
+
+
+            <!--</RelativeLayout>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="Confirmar"-->
+                <!--android:id="@+id/button" />-->
+        <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
 </LinearLayout>

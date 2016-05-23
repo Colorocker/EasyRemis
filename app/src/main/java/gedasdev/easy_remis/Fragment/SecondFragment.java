@@ -1,15 +1,18 @@
 package gedasdev.easy_remis.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import gedasdev.easy_remis.Activity.SearchActivity;
 import gedasdev.easy_remis.Interface.IFragmentToActivity;
 import gedasdev.easy_remis.R;
 
@@ -27,6 +30,7 @@ public class SecondFragment extends Fragment {
     private static SecondFragment instance = null;
     TextView textDireccion;
     TextView textDistricto;
+    CardView card_mensaje;
 
     /**
      * Create fragment view when paginated.
@@ -45,6 +49,18 @@ public class SecondFragment extends Fragment {
 
         textDireccion = (TextView) v.findViewById(R.id.txt_direccion_search_pagetwo);
         textDistricto = (TextView) v.findViewById(R.id.txt_distrito_search_pagetwo);
+
+        card_mensaje = (CardView) v.findViewById(R.id.card_mensaje);
+
+        card_mensaje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "MENSAJE", Toast.LENGTH_LONG).show();
+                mCallback.NextFragment(1);
+
+            }
+        });
+
 
         return v;
     }

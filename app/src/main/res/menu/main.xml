@@ -4,7 +4,9 @@
 
     <item
         android:id="@+id/action_favorite"
-        android:icon="@drawable/ic_watch"
+        android:icon="@drawable/ic_calendar"
+        android:actionMenuTextColor="@color/accent"
+
         android:title="@string/action_calendar"
         app:showAsAction="ifRoom"/>
 

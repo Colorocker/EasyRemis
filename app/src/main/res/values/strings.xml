@@ -44,9 +44,16 @@
     <string name="direccion_posicion_destino">Direccion Posicion Destino</string>
     <string name="localidad_posicion_destino">Localidad Posicion Destino</string>
     <string name="imagendestinopagetwo">ImagenDestinoPageTwo</string>
-    <string name="direccion_posicion_origen">Direccion Posicion Origen</string>
+    <string name="direccion_posicion_origen">Buscar Direccion Posicion Origen</string>
     <string name="localidad_posicion_origen">Localidad Posicion Origen</string>
     <string name="action_calendar">Reserva</string>
+    <string name="buscar_posicion">Buscar Posicion</string>
+
+    <string name="press_back_again">Vuelva a presionar "Atrás" para salir de la aplicación</string>
+    <string name="origen">Origen</string>
+    <string name="marcador_origen">Marcador_Origen</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="destino">Destino</string>
 
 
 </resources>

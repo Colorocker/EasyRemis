@@ -5,115 +5,115 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--<TextView-->
-        <!--android:id="@+id/tvFragFirst"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:textSize="26dp"-->
-        <!--android:text="TextView"-->
-        <!--android:background="@android:color/holo_orange_dark"-->
-        <!--/>-->
+    <!--android:id="@+id/tvFragFirst"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:textSize="26dp"-->
+    <!--android:text="TextView"-->
+    <!--android:background="@android:color/holo_orange_dark"-->
+    <!--/>-->
 
 
 
 
 
-        <FrameLayout
-            android:id="@+id/frameLayout_Origen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <FrameLayout
+        android:id="@+id/frameLayout_Origen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_search"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|top"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                >
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginRight="16dp"
-                        android:tint="@color/android_green"
-                        android:src="@drawable/ic_map_marker_radius" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Buscar Posicion"
-                        android:id="@+id/txt_direccion_search"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginLeft="31dp"
-                        android:layout_marginStart="31dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text=""
-                        android:id="@+id/txt_distrito_search"
-                        android:layout_below="@+id/txt_direccion_search"
-                        android:layout_alignLeft="@+id/txt_direccion_search"
-                        android:layout_alignStart="@+id/txt_direccion_search" />
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_origen"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp">
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    android:tint="@color/android_green"
+                    android:src="@drawable/ic_map_marker_radius" />
 
-                    <ImageView
-                        android:id="@+id/marker_photo_origen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginRight="16dp"
-                        android:tint="@color/android_darkblue"
-                        android:src="@drawable/ic_car" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Buscar Posicion"
+                    android:id="@+id/txt_direccion_search"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginStart="31dp" />
 
-                    <TextView
-                        android:id="@+id/adress_title_origen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_toRightOf="@+id/marker_photo_origen"
-                        android:text="@string/empezar_viaje"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="30sp" />
-                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text=""
+                    android:id="@+id/txt_distrito_search"
+                    android:layout_below="@+id/txt_direccion_search"
+                    android:layout_alignLeft="@+id/txt_direccion_search"
+                    android:layout_alignStart="@+id/txt_direccion_search" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_origen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            >
 
-            </android.support.v7.widget.CardView>
-        </FrameLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/marker_photo_origen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    android:tint="@color/android_darkblue"
+                    android:src="@drawable/ic_car" />
+
+                <TextView
+                    android:id="@+id/adress_title_origen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/marker_photo_origen"
+                    android:text="@string/empezar_viaje"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
 
 
 
-    </RelativeLayout>
+</RelativeLayout>
